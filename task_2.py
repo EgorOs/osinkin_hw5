@@ -3,7 +3,9 @@ from functools import reduce
 
 
 def is_armstrong(number):
-    if number < 1 or number % 1 != 0:
+    if not isinstance(number, int):
+        raise TypeError('{} is {}, not int'.format(number, type(number).__name__))
+    if number < 1:
         raise ValueError(str(number) + " is not natural a number")
     n = str(number)
     lst = [int(x)**len(n) for x in n]
@@ -14,5 +16,3 @@ def is_armstrong(number):
 
 assert is_armstrong(153) == True, "Armstrong's number"
 assert is_armstrong(10) == False, "Not armstrong's number"
-
-
