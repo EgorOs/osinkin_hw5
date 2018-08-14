@@ -14,5 +14,6 @@ def is_armstrong(number):
     else:
         return False
 
+
 assert is_armstrong(153) == True, "Armstrong's number"
 assert is_armstrong(10) == False, "Not armstrong's number"
